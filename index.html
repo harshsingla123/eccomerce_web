@@ -13,15 +13,13 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="data/cart.js"></script>
+<script defer src="data/products.js"></script>
+<script defer src="script.js"></script>
 
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <!-- ================= NAVBAR ================= -->
-
     <nav>
 
         <div class="logo">
@@ -56,7 +54,7 @@
             <a href="cart.html">
                 <div class="icon cart">
                     🛒
-                    <span>2</span>
+                    <span class="cart-icon"></span>
                 </div>
             </a>
 
@@ -91,13 +89,14 @@
 
             </p>
 
-            <div class="hero-buttons">
-
+            <div class="hero-buttons"> 
+            <a href="#goproducts">
                 <button class="shop-btn">
 
                     Shop Now
 
                 </button>
+                </a>
 
                 <button class="learn-btn">
 
@@ -157,191 +156,17 @@
     </section>
     <!-- ================= PRODUCTS ================= -->
 
-    <section id="goproducts"class="products">
+    <section class="products">
 
-        <h2 class="section-title">
-            Featured Products
-        </h2>
+    <h2 class="section-title">
+        Featured Products
+    </h2>
 
-        <div class="product-container">
+    <div class="product-container js-product-container">
 
-            <!-- Product 1 -->
+    </div>
 
-            <div class="product-card">
-
-                <span class="discount">-20%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/nike.jpg">
-
-                <h3>Nike Air Max</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹6,999</span>
-
-                    <span class="old-price">₹8,999</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-
-            <!-- Product 2 -->
-
-            <div class="product-card">
-
-                <span class="discount">-15%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/adidas.jpg">
-
-                <h3>Adidas Sneakers</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐☆
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹5,499</span>
-
-                    <span class="old-price">₹6,499</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-
-            <!-- Product 3 -->
-
-            <div class="product-card">
-
-                <span class="discount">-30%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/applewatch.jpg">
-
-                <h3>Apple Watch</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹39,999</span>
-
-                    <span class="old-price">₹44,999</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-
-            <!-- Product 4 -->
-
-            <div class="product-card">
-
-                <span class="discount">-18%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/macbook.jpg">
-
-                <h3>MacBook Air M4</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹1,14,900</span>
-
-                    <span class="old-price">₹1,29,900</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-
-            <!-- Product 5 -->
-
-            <div class="product-card">
-
-                <span class="discount">-40%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/hoodie.jpg">
-
-                <h3>Premium Hoodie</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐☆
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹1,799</span>
-
-                    <span class="old-price">₹2,999</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-
-            <!-- Product 6 -->
-
-            <div class="product-card">
-
-                <span class="discount">-25%</span>
-
-                <span class="wishlist">❤</span>
-
-                <img src="images/sonyheadphone.jpg">
-
-                <h3>Sony Headphones</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="price">
-
-                    <span class="new-price">₹24,999</span>
-
-                    <span class="old-price">₹31,999</span>
-
-                </div>
-
-                <button>Add To Cart</button>
-
-            </div>
-
-        </div>
-
-    </section>
-
+</section>
     <!-- ================= WHY CHOOSE US ================= -->
 
     <section class="features">
