@@ -1,10 +1,16 @@
+import { cart, addToCart } from './data/cart.js';
+import { products } from './data/products.js';
+
+
+
 
 const container = document.querySelector(".js-product-container");
 let html = "";
 
+
 products.forEach(product => {
 
-      html += `
+    html += `
             <div class="product-card">
 
                 <span class="discount">
@@ -42,14 +48,30 @@ products.forEach(product => {
 
 });
 
+function addProductToCart(productId) {
+    const product = products.find(p => p.id == productId);
+    if (!product) return;
+
+    addToCart(product);
+    updateCartCount();
+}
+function updateCartCount() {
+    const cartCountElement = document.querySelector(".cart-icon");
+    cartCountElement.textContent = cart.length;
+}
 container.innerHTML = html;
 
 document.querySelectorAll(".add-to-cart").forEach(button => {
-      button.addEventListener("click", function () {
+    button.addEventListener("click", function () {
 
-            const productId = button.dataset.productId;
-            const product = products.find(p => p.id == productId);
-            cart.push(product);
-           
-      })
+        const productId = button.dataset.productId;
+        addProductToCart(productId);
+    })
 });
+updateCartCount();
+
+
+
+
+
+

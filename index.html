@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ShopEase</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -12,14 +14,14 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="data/cart.js"></script>
-<script defer src="data/products.js"></script>
-<script defer src="script.js"></script>
 
+   <script type="module" src="script.js"></script>
 </head>
 
 <body>
+
+    <!-- ================= NAVBAR ================= -->
+
     <nav>
 
         <div class="logo">
@@ -27,40 +29,32 @@
         </div>
 
         <div class="search-box">
-
             <input type="text" placeholder="Search products...">
-
             <button>🔍</button>
-
         </div>
 
         <ul class="nav-links">
-
             <li><a href="#">Home</a></li>
-
             <li><a href="#goproducts">Products</a></li>
-
             <li><a href="#categories">Categories</a></li>
-
-            <li><a href="#">Deals</a></li>
-
-     
-
+            <li><a href="#deals">Deals</a></li>
         </ul>
 
         <div class="nav-icons">
 
             <div class="icon">👤</div>
+
             <a href="cart.html">
                 <div class="icon cart">
                     🛒
-                    <span class="cart-icon"></span>
+                    <span class="cart-icon">0</span>
                 </div>
             </a>
 
         </div>
 
     </nav>
+
 
     <!-- ================= HERO ================= -->
 
@@ -73,47 +67,37 @@
             </p>
 
             <h1>
-
                 Discover The
-
                 <span>Best Products</span>
-
                 At The Best Prices
-
             </h1>
 
             <p class="hero-description">
-
                 Shop premium electronics, fashion and accessories
                 with exciting discounts and lightning-fast delivery.
-
             </p>
 
-            <div class="hero-buttons"> 
-            <a href="#goproducts">
-                <button class="shop-btn">
+            <div class="hero-buttons">
 
-                    Shop Now
-
-                </button>
+                <a href="#goproducts">
+                    <button class="shop-btn">
+                        Shop Now
+                    </button>
                 </a>
 
-                <button class="learn-btn">
-
-                    Learn More
-
-                </button>
+                <a href="#categories">
+                    <button class="learn-btn">
+                        Learn More
+                    </button>
+                </a>
 
             </div>
 
         </div>
 
 
-
         <div class="hero-right">
-
-            <img src="images/macbook.jpg">
-
+            <img src="images/macbook.jpg" alt="MacBook">
         </div>
 
     </section>
@@ -121,9 +105,11 @@
 
     <!-- ================= CATEGORIES ================= -->
 
-    <section id ="categories" class="categories">
+    <section id="categories" class="categories">
 
-        <h2 class="section-title">Shop By Category</h2>
+        <h2 class="section-title">
+            Shop By Category
+        </h2>
 
         <div class="category-container">
 
@@ -154,24 +140,27 @@
         </div>
 
     </section>
-    <!-- ================= PRODUCTS ================= -->
 
-    <section class="products">
+
+    <!-- ================= PRODUCTS ================= -->
+<section id="goproducts" class="products">
 
     <h2 class="section-title">
         Featured Products
     </h2>
 
-    <div class="product-container js-product-container">
-
-    </div>
+    <div class="product-container js-product-container"></div>
 
 </section>
+
+
     <!-- ================= WHY CHOOSE US ================= -->
 
     <section class="features">
 
-        <h2 class="section-title">Why Shop With Us?</h2>
+        <h2 class="section-title">
+            Why Shop With Us?
+        </h2>
 
         <div class="feature-container">
 
@@ -203,6 +192,7 @@
 
     </section>
 
+
     <!-- ================= STATS ================= -->
 
     <section class="stats">
@@ -228,7 +218,7 @@
         </div>
 
     </section>
-    
+
 
     <!-- ================= FOOTER ================= -->
 
@@ -238,7 +228,9 @@
 
             <div class="footer-box">
 
-                <h2>Shop<span>Ease</span></h2>
+                <h2>
+                    Shop<span>Ease</span>
+                </h2>
 
                 <p>
                     Your one-stop destination for premium fashion,
@@ -247,16 +239,18 @@
 
             </div>
 
+
             <div class="footer-box">
 
                 <h3>Quick Links</h3>
 
                 <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Categories</a>
+                <a href="#goproducts">Products</a>
+                <a href="#categories">Categories</a>
                 <a href="#">Contact</a>
 
             </div>
+
 
             <div class="footer-box">
 
@@ -268,6 +262,7 @@
                 <a href="#">Terms</a>
 
             </div>
+
 
             <div class="footer-box">
 
@@ -281,12 +276,6 @@
             </div>
 
         </div>
-
-        <hr>
-
-        <p class="copyright">
-            © 2026 ShopEase. All Rights Reserved.
-        </p>
 
     </footer>
 
