@@ -57,7 +57,10 @@ function addProductToCart(productId) {
 }
 function updateCartCount() {
     const cartCountElement = document.querySelector(".cart-icon");
-    cartCountElement.textContent = cart.length;
+    cartCountElement.textContent = cart.reduce(
+        (count, product) => count + product.quantity,
+        0
+    );
 }
 container.innerHTML = html;
 
