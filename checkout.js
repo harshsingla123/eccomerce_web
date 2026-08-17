@@ -1,4 +1,4 @@
-import { cart, changeQuantity, clearCart, removeFromCart } from './data/cart.js';
+import { cart } from './data/cart.js';
 
 const cartContainer = document.querySelector('.js-cart-items');
 const subtotalElement = document.querySelector('.js-subtotal');
@@ -14,17 +14,14 @@ const currencyFormatter = new Intl.NumberFormat('en-IN', {
 });
 
 function renderCart() {
-  const subtotal = cart.reduce(
-    (sum, product) => sum + Number(product.price || 0) * product.quantity,
-    0
-  );
+  const subtotal = cart.subtotal;
   const gst = subtotal * 0.18;
   const total = subtotal + gst;
 
-  if (cart.length === 0) {
+  if (cart.items.length === 0) {
     cartContainer.innerHTML = '<div class="empty-cart">Your cart is empty.</div>';
   } else {
-    cartContainer.innerHTML = cart.map((product, index) => `
+    cartContainer.innerHTML = cart.items.map((product, index) => `
       <div class="cart-item">
         <img src="${product.image}" alt="${product.name}">
         <div class="cart-item-info">
@@ -45,28 +42,28 @@ function renderCart() {
   subtotalElement.textContent = currencyFormatter.format(subtotal);
   gstElement.textContent = currencyFormatter.format(gst);
   totalElement.textContent = currencyFormatter.format(total);
-  cartCountElement.textContent = cart.reduce((count, product) => count + product.quantity, 0);
-  checkoutButton.disabled = cart.length === 0;
+  cartCountElement.textContent = cart.itemCount;
+  checkoutButton.disabled = cart.items.length === 0;
 
   document.querySelectorAll('.remove-btn').forEach((button) => {
     button.addEventListener('click', () => {
-      removeFromCart(Number(button.dataset.index));
+      cart.remove(Number(button.dataset.index));
       renderCart();
     });
   });
 
   document.querySelectorAll('.quantity-btn').forEach((button) => {
     button.addEventListener('click', () => {
-      changeQuantity(Number(button.dataset.index), Number(button.dataset.change));
+      cart.changeQuantity(Number(button.dataset.index), Number(button.dataset.change));
       renderCart();
     });
   });
 }
 
 checkoutButton.addEventListener('click', () => {
-  if (cart.length === 0) return;
+  if (cart.items.length === 0) return;
 
-  clearCart();
+  cart.clear();
   renderCart();
   alert('Your order has been placed successfully!');
 });
